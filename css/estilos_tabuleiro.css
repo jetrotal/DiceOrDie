@@ -1,0 +1,80 @@
+/* Specific styles for the first file */
+body {
+  max-width: 95vw;
+}
+
+.section-grid {
+  justify-items: center;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+
+input[type="number"] {
+  width: 120px;
+}
+
+input[type="color"] {
+  padding: 2px;
+  height: 40px;
+}
+
+.board-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  margin: calc(var(--padding) * 2);
+}
+
+canvas {
+  border: 2px solid var(--color-section-border);
+  border-radius: var(--border-radius);
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.floating-button {
+  position: absolute;
+  top: -43px;
+  margin: 0;
+  border-radius: 10px 10px 0 0;
+  width: 152px;
+  padding: 12px;
+}
+
+.modal-section {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: var(--color-section-background);
+  border: 1px solid var(--color-section-border);
+  border-radius: var(--border-radius);
+  padding: calc(var(--padding) * 2);
+  z-index: 1000;
+  min-width: 300px;
+  border-image: url(https://jetrotal.github.io/DiceOrDie/img/ContainerBG.png) 26 fill/26px/0 stretch;
+}
+
+.button-group {
+  display: flex;
+  gap: var(--padding);
+  justify-content: center;
+}
+
+.button-group button {
+  margin: 10px 0;
+}
+
+@media (max-width: 600px) {
+  .section-grid {
+    grid-template-columns: 1fr;
+  }
+}
