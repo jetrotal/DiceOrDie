@@ -1,0 +1,84 @@
+@import url(../css/estilos_gerais.css);
+body {
+    color: #fff;
+    max-width: 95vw;
+}
+
+.section-grid {
+    justify-items: center;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+input[type="number"] {
+    width: 120px;
+}
+
+input[type="color"] {
+    height: 40px;
+    padding: 2px;
+}
+
+.board-container {
+    display: flex;
+    justify-content: center;
+    margin: calc(var(--padding) * 2);
+    position: relative;
+}
+
+canvas {
+    background-color: rgba(255, 255, 255, 0.2);
+    border: 2px solid var(--color-section-border);
+}
+
+.floating-button {
+    border-radius: 10px 10px 0 0;
+    margin: 0;
+    padding: 12px;
+    position: absolute;
+    top: -43px;
+    width: 152px;
+}
+
+.modal-section,
+canvas {
+    border-radius: var(--border-radius);
+}
+
+.modal-section {
+    background-color: var(--color-section-background);
+    border: 1px solid var(--color-section-border);
+    border-image: url(https://jetrotal.github.io/DiceOrDie/img/ContainerBG.png) 26 fill/26px/0 stretch;
+    display: none;
+    left: 50%;
+    min-width: 300px;
+    padding: calc(var(--padding) * 2);
+    position: fixed;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+}
+
+.button-group {
+    display: flex;
+    gap: var(--padding);
+    justify-content: center;
+}
+
+.button-group button {
+    margin: 10px 0;
+}
+
+@media (max-width: 600px) {
+    .section-grid {
+        grid-template-columns: 1fr;
+    }
+}

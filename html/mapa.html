@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Mapa</title>
+    <link rel="stylesheet" href="../css/mapa.css">
+
+</head>
+
+<body>
+    <!-- partial:index.partial.html -->
+    <!DOCTYPE html>
+    <html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Tabuleiro</title>
+    </head>
+
+    <body>
+        <div class="grain"></div>
+        <h1>Mapa</h1>
+        <div class="section">
+            <br>
+            <br>
+            <div class="section-grid">
+                <div class="form-group">
+                    <label for="gridType">Tipo de Grade</label>
+                    <select id="gridType">
+          <option value="square">Quadrada</option>
+          <option value="hexagonal">Hexagonal</option>
+        </select>
+                </div>
+                <div class="form-group">
+                    <label for="backgroundImage">URL da Imagem de Fundo</label>
+                    <input type="text" id="backgroundImage">
+                </div>
+                <div class="form-group">
+                    <label for="boardWidth">Largura do Tabuleiro</label>
+                    <input type="number" id="boardWidth" value="1040">
+                </div>
+                <div class="form-group">
+                    <label for="boardHeight">Altura do Tabuleiro</label>
+                    <input type="number" id="boardHeight" value="560">
+                </div>
+                <div class="form-group">
+                    <label></label>
+                    <button id="generateGridButton">Gerar Grade</button>
+                </div>
+            </div>
+            <br>
+            <div>
+                <div class="board-container">
+                    <canvas id="gameCanvas" width="750" height="600"></canvas>
+                    <button id="addPieceButton" class="floating-button">Adicionar Peça</button>
+                </div>
+            </div>
+            <div id="pieceCustomization" class="modal-section">
+                <h2>Customização da Peça</h2>
+                <div class="form-group">
+                    <label for="pieceName">Nome</label>
+                    <input type="text" id="pieceName">
+                </div>
+                <div class="form-group">
+                    <label for="pieceColor">Cor</label>
+                    <input type="color" id="pieceColor">
+                </div>
+                <div class="form-group">
+                    <label for="pieceImage">URL da Imagem</label>
+                    <input type="text" id="pieceImage">
+                </div>
+                <div class="button-group">
+                    <button id="updatePieceButton">Atualizar Peça</button>
+                    <button id="removePieceButton">Remover Peça</button>
+                </div>
+            </div>
+    </body>
+
+    </html>
+    <!-- partial -->
+    <script src="../js/mapa.js"></script>
+
+</body>
+
+</html>

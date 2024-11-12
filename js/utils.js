@@ -44,3 +44,19 @@ const utils = {
         alert('Dados salvos com sucesso!\n' + JSON.stringify(dados, null, 2));
     }
 };
+
+function CheckRequired(form) {
+  const requiredInputs = form.querySelectorAll("[required]");
+  let allFilled = true;
+
+  requiredInputs.forEach(input => {
+    if (!input.value.trim()) {
+      allFilled = false;
+      input.classList.add("error"); 
+    } else {
+      input.classList.remove("error");
+    }
+  });
+
+  return allFilled;
+}

@@ -1,0 +1,134 @@
+@import url(../css/estilos_gerais.css);
+@import url(../css/menus.css);
+body {
+    color: #fff;
+    max-width: 800px;
+    padding-left: 270px
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 24px
+}
+
+.section label {
+    align-items: center;
+    display: flex;
+    font-weight: 700;
+    margin-bottom: 5px
+}
+
+.form-group label svg {
+    font-size: 1.2em;
+    margin-left: -8px;
+    margin-right: 4px
+}
+
+.form-group input[type=number] {
+    margin-right: 10px;
+    width: 60px
+}
+
+.form-row {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.5rem
+}
+
+.form-col {
+    flex: 1
+}
+
+.divider {
+    height: 2px;
+    margin: 2rem 0
+}
+
+.btn,
+.divider {
+    background-color: var(--color-button-background)
+}
+
+.btn {
+    border: 0;
+    border-radius: 4px;
+    color: var(--color-section-background);
+    cursor: pointer;
+    padding: .75rem 1.5rem
+}
+
+.btn:hover {
+    background-color: var(--color-button-hover-background)
+}
+
+.switch {
+    display: inline-block;
+    height: 34px;
+    position: relative;
+    width: 60px
+}
+
+.switch input {
+    height: 0;
+    opacity: 0;
+    width: 0
+}
+
+.slider,
+.slider:before {
+    position: absolute;
+    transition: .4s
+}
+
+.slider {
+    background-color: rgba(255, 255, 255, .1);
+    border-radius: 34px;
+    bottom: 0;
+    cursor: pointer;
+    left: 0;
+    right: 0;
+    top: 0
+}
+
+.slider:before {
+    background-color: #fff;
+    border-radius: 50%;
+    bottom: 4px;
+    content: "";
+    height: 26px;
+    left: 4px;
+    width: 26px
+}
+
+input:checked+.slider {
+    background-color: var(--color-button-background)
+}
+
+input:checked+.slider:before {
+    transform: translateX(26px)
+}
+
+.toggle-container {
+    align-items: center;
+    display: flex;
+    gap: 1rem
+}
+
+.toggle-label {
+    margin-left: .5rem
+}
+
+.avatar-upload {
+    align-items: center;
+    display: flex;
+    flex-direction: column
+}
+
+.avatar-preview {
+    border-radius: 50%;
+    height: 150px;
+    margin-bottom: 10px;
+    object-fit: cover;
+    width: 150px
+}

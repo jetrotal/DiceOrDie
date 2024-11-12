@@ -1,0 +1,129 @@
+@import url(../css/estilos_gerais.css?au);
+@import url(../css/menus.css?342874);
+body {
+    color: #fff;
+    max-width: 800px;
+    padding-left: 270px;
+}
+
+.search-container {
+    margin: 20px 0;
+}
+
+.tables-container {
+    margin-top: 20px;
+}
+
+.table-card {
+    background: var(--color-section-background);
+    border-radius: 8px;
+    margin-bottom: 20px;
+    display: flex;
+    min-height: 170px;
+    position: relative;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s ease;
+    cursor: pointer;
+    user-select: none;
+    opacity: 0.8;
+    transform: translateY(1px);
+}
+
+.table-card:hover {
+    transform: translateY(0px);
+    opacity: 1;
+}
+
+.table-banner {
+    width: 135px;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+    margin: auto;
+}
+
+.table-content {
+    padding: 20px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.table-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.table-title {
+    font-size: 20px;
+    font-weight: bold;
+    margin: 0;
+    color: var(--color-text);
+}
+
+.status-tag {
+    padding: 4px 12px;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.status-full {
+    background: var(--color-error);
+}
+
+.status-available {
+    background: var(--color-success);
+}
+
+.table-description {
+    margin: 10px 0;
+    flex-grow: 1;
+    line-height: 1.5;
+    color: var(--color-text-secondary);
+}
+
+.table-footer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: auto;
+}
+
+.tag {
+    background: var(--color-button-background);
+    padding: 4px 12px;
+    border-radius: 4px;
+    font-size: 14px;
+    white-space: nowrap;
+    color: #fff;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+.author-tag {
+    position: absolute;
+    right: 60px;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+@media (max-width: 768px) {
+    body {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    .table-card {
+        flex-direction: column;
+    }
+    .table-banner {
+        width: 100%;
+        height: 120px;
+        border-radius: 8px 8px 0 0;
+    }
+    .author-tag {
+        position: static;
+        margin-top: 10px;
+    }
+}
