@@ -133,8 +133,57 @@ class GerenciadorMesa {
         });
     }
 }
-
+let mesa
 window.onload = function() {
     populateMenus();
-    const mesa = new GerenciadorMesa();
+
+
+
+
+    mesa = new GerenciadorMesa();
+
+    if (target) {
+        const usuario = getDataById(target, db.mesas);
+        console.log(usuario);
+
+        /* usuario:
+        Autor
+: 
+"teste"
+Banner [image]
+: 
+"https://marilianoticia.com.br/wp-content/uploads/2024/08/17159145166646c714af352_1715914516_3x2_lg-256x256.jpg"
+Chat
+: 
+""
+Descricao
+: 
+"Revivendo uma aventura de Arton! \n\nJogadores interessados devem entrar em contato com email@gmail.com\n\nData limite: 25/08/1994 \nHorario das partidas: 22 horas."
+Nome_Mesa
+: 
+"Aventura em Tormenta"
+Qtd_Jogadores
+: 
+"7"
+Sistema
+: 
+"3D&T"
+Vagas
+: 
+"true"
+__PowerAppsId__
+: 
+"83a3fc4b33ae4667b1e3090f9ecd71a2" */
+
+        mesa.elementos.nomeMesa.value = usuario.Nome_Mesa;
+        mesa.elementos.sistema.value = usuario.Sistema;
+        mesa.elementos.qtdJogadores.value = usuario.Qtd_Jogadores;
+        mesa.elementos.descricao.value = usuario.Descricao;
+        mesa.elementos.previewCapa.src = usuario["Banner [image]"];
+        mesa.elementos.autor.value = usuario.Autor;
+        mesa.elementos.publico.checked = usuario.Vagas === "true";
+        mesa.elementos.publicoLabel.textContent = usuario.Vagas === "true" ? "Sim" : "Não";
+        lockElements(mesa)
+
+    }
 };

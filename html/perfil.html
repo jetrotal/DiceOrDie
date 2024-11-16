@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil do Usuário</title>
+    <link rel="stylesheet" href="../css/perfil.css">
+    <link rel="stylesheet" type="text/css" href="../css/menus.css">
+    <script src="../js/mockupData.js"></script>
+    <script src="../js/utils.js"></script>
+    <script src="../js/menus.js"></script>
+</head>
+
+<body>
+    <div class="section">
+        <!-- Coluna Esquerda -->
+        <div class="left-column">
+            <div class="profile-picture">
+                <img src="foto-perfil.jpg" alt="Foto de Perfil" id="profileImage">
+            </div>
+
+            <div class="info-group">
+                <strong>Apelido:</strong>
+                <span id="nickname">Usuário123</span>
+            </div>
+
+            <div class="info-group">
+                <strong>Idade:</strong>
+                <span id="idade">25</span>
+            </div>
+
+            <div class="info-group">
+                <strong>Sistema Favorito:</strong>
+                <span id="sistema-favorito">D&D</span>
+            </div>
+
+            <button onclick="window.location.href=`./conta.html?session=${session}&view=${target}`">Alterar Dados de Perfil</button>
+        </div>
+
+        <!-- Coluna Direita -->
+        <div class="right-column">
+            <h2>Sobre Você:</h2>
+            <textarea id="descricao" placeholder="Escreva uma breve descrição!" rows="10"></textarea>
+        </div>
+    </div>
+
+    <script defer>
+        // Uso da função
+        const idProcurado = target;
+        const usuario = getDataById(idProcurado, db.cadastros);
+
+        if (usuario) {
+            document.getElementById('profileImage').src = usuario['Foto_perfil [image]'];
+            document.getElementById('nickname').textContent = usuario.Nome;
+            document.getElementById('idade').textContent = calcularIdade(usuario.Data_Nascimento);
+            document.getElementById('sistema-favorito').textContent = "D&D";
+
+            console.log("Usuário encontrado:", usuario);
+        } else {
+            console.log("Usuário não encontrado.");
+        }
+    </script>
+</body>
+
+</html>

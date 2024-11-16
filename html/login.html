@@ -1,0 +1,102 @@
+<!-- 
+TODO: - Vincular a uma página de CADASTRO / código linha 43
+    - Vincular a uma página INICIAL / código linha 69     
+    - A funcionalidade de omitir a senha simplesmente sumiu
+    - Atualizar login para EMAIl ou TELEFONE para mesma SENHA
+
+
+Usar o Script de maneira externa (?) vulgo <src='script'...
+
+Conferir type da div senha l 24
+ 
+Conferir type e value do botão entrar l 27
+
+Conferir href linha 13
+ 
+-->
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DICE OR DIE</title>
+    <link rel="stylesheet" type="text/css" href="../css/menus.css">
+    <link rel="stylesheet" type="text/css" href="../css/login.css">
+</head>
+
+<body>
+    <script src="../js/mockupData.js"></script>
+    <script src="../js/utils.js"></script>
+    <script src="../js/menus.js"></script>
+    <nav class="top-menu">
+        <div class="logo">
+            <img src="../img/logo_80x120.png" alt="Logo">
+        </div>
+        <ul id="topContent">
+            <!-- MENU GERADO POR JS !-->
+        </ul>
+    </nav>
+    <div class="section" id="container">
+        <h1>DICE OR DIE</h1>
+
+        <div class="form-group">
+            <label for="login">Login:</label>
+            <input type="text" name="login" id="login" placeholder="E-mail ou Número de Telefone">
+        </div>
+
+        <div class="form-group">
+            <label for="senha">Senha:</label>
+            <input type="password" name="senha" id="senha">
+        </div>
+
+        <button type="button" id="submitter" style="width:100%" onclick="login()">Entrar</button>
+
+        <p>Ainda não tem Cadastro? <a href="https://www.exemplo.com" target="_blank">Clique Aqui</a></p>
+
+        <script>
+            populateMenus();
+            // Lista de usuários válidos com emails ou números de telefone como login
+            let usuariosValidos = [];
+
+            // Função para popular usuários válidos
+            function popularUsuariosValidos(usuariosValidos, cadastros) {
+                cadastros.forEach(cadastro => {
+                    if ((cadastro.Email || cadastro.Celular) && cadastro.Senha) {
+                        let usuario = {
+                            login: cadastro.Email || `+55${cadastro.Celular}`, // Prioriza o email, senão usa o celular
+                            senha: String(cadastro.Senha), // Garante que senha seja uma string
+                            id: cadastro.__PowerAppsId__ // ID do PowerApps
+                        };
+                        usuariosValidos.push(usuario);
+                    }
+                });
+            }
+
+            popularUsuariosValidos(usuariosValidos, db.cadastros);
+
+            function login() {
+                // Obtenha os valores inseridos pelo usuário
+                const loginInserido = document.getElementById("login").value;
+                const senhaInserida = document.getElementById("senha").value;
+
+                // Verifique se existe um usuário com as credenciais fornecidas
+                const usuarioEncontrado = usuariosValidos.find(usuario =>
+                    usuario.login === loginInserido && usuario.senha === senhaInserida
+                );
+
+                // Mensagem de sucesso ou erro
+                if (usuarioEncontrado) {
+                    alert("Login bem-sucedido! Bem-vindo(a)!");
+                    // Redirecionar para mesas.html com o ID do usuário
+                    window.location.href = `mesas.html?session=${usuarioEncontrado.id}`;
+                } else {
+                    alert("Login ou senha incorretos. Tente novamente.");
+                }
+            }
+        </script>
+
+</body>
+
+</html>

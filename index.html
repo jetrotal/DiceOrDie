@@ -1,0 +1,77 @@
+<link rel="stylesheet" href="./css/estilos_gerais.css">
+<h1 id="status" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);"> CARREGANDO GOOGLE SHEETS</h1>
+<script src="./js/iframes.js" defer></script>
+<iframe id="mainContainer" src="" style="width: 100%; height: 100%; border: none;position: absolute;top: 0;left: 0;right: 0;bottom: 0;" ;></iframe>
+<script>
+    let baseUrl = window.location.href;
+    let currentPage = "";
+
+    // === Client-side JavaScript ===
+    async function getSheetAsJson(sheetName = 'fichas') {
+        try {
+            const WEBAPP_URL = 'https://script.google.com/macros/s/AKfycbwGb3LteTBfiFw0NKP1ZI-EexonRwnhQV50TOQsrziCTX6q5ulT1YBDt3m0T7hU4kYw/exec';
+            // Add sheet name as URL parameter
+            const url = `${WEBAPP_URL}?sheet=${encodeURIComponent(sheetName)}`;
+            const response = await fetch(url);
+            const json = await response.json();
+
+            if (json.error) {
+                throw new Error(json.error);
+            }
+
+            return json.data;
+        } catch (error) {
+            console.error('Error fetching sheet:', error);
+            throw error;
+        }
+    }
+
+    db = {};
+
+    // Get specific sheet
+    Promise.all([
+            getSheetAsJson('cadastros').then(data => db.cadastros = data),
+            getSheetAsJson('mesas').then(data => db.mesas = data),
+            getSheetAsJson('fichas').then(data => db.fichas = data)
+        ])
+        .then(() => {
+            initpage(); // Only called after all data has been loaded
+        })
+        .catch(err => {
+            console.error("Error loading data:", err);
+        });
+
+    // Get sheet name from URL parameter
+    function getSheetFromURL() {
+        const urlParams = new URLSearchParams(window.location.search);
+        const sheetName = urlParams.get('sheet');
+
+        if (sheetName) {
+            getSheetAsJson(sheetName)
+                .then(data => console.log(`Sheet ${sheetName}:`, data))
+                .catch(err => console.error(err));
+        }
+    }
+
+    function initpage() {
+        document.getElementById('status').remove();
+        const url = new URL(window.location.href);
+        const navTo = url.searchParams.get('page');
+        document.getElementById('mainContainer').src = `html/${navTo}.html`;
+    }
+
+    // Get the current URL and create a URL object
+    function pageState(newpage) {
+        const url = new URL(window.location.href);
+
+        // Set the `page` parameter to the desired value
+        url.searchParams.set('page', newpage);
+
+        // If the updated URL is different from the current URL, change it
+        if (window.location.href !== url.href) {
+            history.replaceState(null, '', url.href);
+        }
+    }
+    // Call this when page loads if you want to use URL parameters
+    // getSheetFromURL();
+</script>

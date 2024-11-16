@@ -1,0 +1,146 @@
+/* Estilos Gerais */
+
+@import url("../css/estilos_gerais.css");
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+
+/* Container de Perfil */
+
+.section {
+    display: flex;
+    flex-direction: row;
+    padding: 40px;
+    width: 800px;
+    /* Ajustado para preencher mais da metade da tela */
+    height: 60vh;
+    /* Ajustado para ocupar mais altura da tela */
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    gap: 50px;
+    /* Maior espaçamento entre as colunas */
+}
+
+#descricao {
+    height: 100%;
+}
+
+
+/* Coluna Esquerda */
+
+.left-column {
+    flex: 1;
+    /* Diminuído para 1 para tornar a coluna menor */
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /* Distribui os elementos verticalmente */
+}
+
+.profile-picture {
+    margin-bottom: 20px;
+}
+
+.profile-picture img {
+    width: 150px;
+    /* Tamanho da imagem de perfil */
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: solid #333;
+}
+
+
+/* Informações (Apelido, Idade, Sistema Favorito) */
+
+.info-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+
+/*cor da info Apelido... */
+
+.info-group strong {
+    font-weight: bold;
+    display: inline-block;
+    margin-right: 10px;
+    /* Aumentado o espaçamento entre o título e o valor */
+    color: white;
+}
+
+
+/*cor da info usuario... */
+
+.info-group span {
+    font-size: 1.2em;
+}
+
+
+/* Botões */
+
+button {
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 15px;
+    width: 100%;
+    /* Botões ocupam toda a largura disponível */
+}
+
+
+/* Coluna Direita */
+
+.right-column {
+    flex: 2;
+    /* Aumentado para 2 para tornar a coluna maior */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* Centraliza verticalmente */
+}
+
+
+/* Título de 'Sobre Você' */
+
+.right-column h2 {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    text-align: left;
+    /* Garantir que o título de 'Sobre Você' esteja alinhado à esquerda */
+}
+
+
+/* Caixa de texto de 'Sobre Você' */
+
+.right-column textarea {
+    width: 90%;
+    /* Largura ajustada para 90% para centralizar mais */
+    margin: 0 auto;
+    /* Centraliza horizontalmente */
+    padding: 20px;
+    /* Aumentado o padding para dar mais espaço dentro da caixa */
+    height: 250px;
+    /* Aumentada a altura da caixa de texto */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    resize: vertical;
+    /* Permite que a caixa de texto seja redimensionada verticalmente */
+    font-size: 1.2em;
+    /* Aumentado o tamanho da fonte */
+    line-height: 1.5;
+    /* Ajuste na altura da linha para facilitar a leitura */
+}

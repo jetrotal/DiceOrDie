@@ -1,17 +1,24 @@
+const queryString = window.location.search;
+const urlParams = new URLSearchParams(queryString);
+
+const session = urlParams.get('session');
+let target = urlParams.get('view');
+if (!target) {
+    target = session;
+}
+
 const defaultMenuData = {
     top: [
-        { url: "./mesas.html", text: "Home" },
-        { url: "./conta.html", text: "Perfil" },
-        { url: "./conta.html", text: "Configurações" },
-        { url: "/mesas.html", text: "Sair" }
+        { url: `./mesas.html?session=${session}`, text: `Home` },
+        { url: `./perfil.html?session=${session}&view=${target}`, text: `Perfil` },
+        { url: `../index.html`, text: `Sair` }
     ],
     side: [
-        { url: "./mesas.html", text: "Mesas" },
-        { url: "./mesa.html", text: "Criar Mesa" },
-        { url: "./fichas.html", text: "Fichas" },
-        { url: "./ficha.html", text: "Novo Personagem" },
-        { url: "./mesas.html", text: "Abandonar Partida" },
-        { url: "./mapa.html", text: "Mapa" }
+        { url: `./mesas.html?session=${session}`, text: `Mesas` },
+        { url: `./mesa.html?session=${session}`, text: `Criar Mesa` },
+        { url: `./ficha.html?session=${session}`, text: `Novo Personagem` },
+        { url: `./mesas.html?session=${session}`, text: `Abandonar Partida` },
+        { url: `./mapa.html?session=${session}`, text: `Mapa` }
     ]
 };
 

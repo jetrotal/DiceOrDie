@@ -46,17 +46,53 @@ const utils = {
 };
 
 function CheckRequired(form) {
-  const requiredInputs = form.querySelectorAll("[required]");
-  let allFilled = true;
+    const requiredInputs = form.querySelectorAll("[required]");
+    let allFilled = true;
 
-  requiredInputs.forEach(input => {
-    if (!input.value.trim()) {
-      allFilled = false;
-      input.classList.add("error"); 
-    } else {
-      input.classList.remove("error");
+    requiredInputs.forEach(input => {
+        if (!input.value.trim()) {
+            allFilled = false;
+            input.classList.add("error");
+        } else {
+            input.classList.remove("error");
+        }
+    });
+
+    return allFilled;
+}
+
+
+// Função para obter usuário do db.cadastros pelo ID
+function getDataById(id, tipo) {
+    return tipo.find(tipo => tipo.__PowerAppsId__ === id);
+}
+
+function calcularIdade(dataNascimento) {
+    const hoje = new Date(); // Data atual
+    const nascimento = new Date(dataNascimento); // Converter para objeto Date
+
+    let idade = hoje.getFullYear() - nascimento.getFullYear(); // Diferença de anos
+    const mesAtual = hoje.getMonth();
+    const diaAtual = hoje.getDate();
+
+    // Ajusta a idade se o aniversário ainda não ocorreu no ano atual
+    if (
+        mesAtual < nascimento.getMonth() ||
+        (mesAtual === nascimento.getMonth() && diaAtual < nascimento.getDate())
+    ) {
+        idade--;
     }
-  });
 
-  return allFilled;
+    return idade;
+}
+
+
+function lockElements(target) {
+    for (var chave in target.elementos) {
+        if (target.elementos[chave]) {
+            target.elementos[chave].readOnly = true;
+            target.elementos[chave].disabled = true; // adiciona disabled
+            target.elementos[chave].classList.add('disabled'); // adiciona classe CSS
+        }
+    }
 }
