@@ -19,6 +19,11 @@ body {
     margin-bottom: 24px;
 }
 
+a {
+    text-decoration: none;
+    color: var(--color-button-background);
+}
+
 
 /* tamanho da fonte "Login" e "Senha" */
 

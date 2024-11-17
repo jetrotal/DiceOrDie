@@ -184,6 +184,26 @@ __PowerAppsId__
         mesa.elementos.publico.checked = usuario.Vagas === "true";
         mesa.elementos.publicoLabel.textContent = usuario.Vagas === "true" ? "Sim" : "Não";
         lockElements(mesa)
+            //add button
+        if (usuario.Vagas === "true") {
+            mesa.elementos.botaoEnviar.classList.remove("disabled");
+            mesa.elementos.botaoEnviar.innerText = "Participar";
+            mesa.elementos.botaoEnviar.removeAttribute("disabled");
 
+            // Create clone
+            var new_element = mesa.elementos.botaoEnviar.cloneNode(true);
+
+            // Add the event listener to the new element
+            new_element.addEventListener('click', (e) => {
+                e.preventDefault();
+                window.location.href = `../html/chat.html?session=${session}&view=${usuario.__PowerAppsId__}`;
+            });
+
+            // Replace the old element with the new one
+            mesa.elementos.botaoEnviar.parentNode.replaceChild(new_element, mesa.elementos.botaoEnviar);
+
+            // Update the reference to point to the new element
+            mesa.elementos.botaoEnviar = new_element;
+        }
     }
 };

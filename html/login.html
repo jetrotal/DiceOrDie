@@ -53,10 +53,17 @@ Conferir href linha 13
 
         <button type="button" id="submitter" style="width:100%" onclick="login()">Entrar</button>
 
-        <p>Ainda não tem Cadastro? <a href="https://www.exemplo.com" target="_blank">Clique Aqui</a></p>
+        <p>Ainda não tem Cadastro? <a href="../html/conta.html?session=new" target="_blank">Clique Aqui</a></p>
 
         <script>
-            populateMenus();
+            const menuData = {
+                top: [{
+                    url: `../index.html`,
+                    text: `Home `
+                }],
+                side: []
+            };
+            populateMenus(menuData);
             // Lista de usuários válidos com emails ou números de telefone como login
             let usuariosValidos = [];
 

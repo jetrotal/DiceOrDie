@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <script src="../js/mockupData.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tela de Jogo</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="../css/chat.css">
+
+
+</head>
+
+<body>
+    <script src="../js/utils.js"></script>
+    <script src="../js/menus.js"></script>
+    <div class="grain"></div>
+    <iframe class="disabled " id="overlay" src="" style="z-index:999; width: 100%; height: 100%; border: none;position: absolute;top: 0;left: 0;right: 0;bottom: 0;" ;></iframe>
+    <img class="deco-axe" src="../img/axe.png"></img>
+    <nav class="top-menu">
+        <div class="logo">
+            <img src="../img/logo_80x120.png" alt="Logo">
+        </div>
+        <ul id="topContent">
+            <!-- MENU GERADO POR JS !-->
+        </ul>
+    </nav>
+    <div class="side-menu">
+        <ul id="sideContent">
+            <!-- MENU GERADO POR JS !-->
+        </ul>
+    </div>
+    <br>
+    <div class="section">
+
+        <div class="gameplay-area">
+            <h2 class="session-title" id="sessionTitle">Ao vivo - Nome da Mesa</h2>
+            <div class="chat-window" id="gameplay"></div>
+            <div class="input-area">
+                <input type="text" class="message-input disabled" placeholder="Mensagem" id="messageInput" onkeyup="checkEnter(event)">
+                <button class="send-button disabled" id="sendButton" onclick="sendMessage()">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
+            <div id="dices" class="disabled">
+                <div id="currentChar">Nenhum Personagem escolhido</div>
+                <img src="../img/d4.svg" alt="d4" onclick="rollDice(4)">
+                <img src="../img/d6.svg" alt="d6" onclick="rollDice(6)">
+                <img src="../img/d8.svg" alt="d8" onclick="rollDice(8)">
+                <img src="../img/d20.svg" alt="d20" onclick="rollDice(20)">
+            </div>
+        </div>
+
+        <div class="character-list section">
+            <h2>Personagens</h2>
+            <div id="characterList" style="display: flex; flex-wrap: wrap; gap: 10px; flex-direction: column;">
+                <img src="https://placehold.co/80.png" alt="Character" class="character-avatar">
+                <img src="https://placehold.co/80.png" alt="Character" class="character-avatar">
+                <img src="https://placehold.co/80.png" alt="Character" class="character-avatar">
+            </div>
+            <br>
+        </div>
+    </div>
+
+    <script>
+        class GerenciadorChat {
+            constructor() {
+                this.elementos = {
+                    overlay: document.getElementById("overlay"),
+                    messageInput: document.getElementById("messageInput"),
+                    gameplay: document.getElementById("gameplay"),
+                    characterList: document.getElementById("characterList"),
+                    currentChar: document.getElementById("currentChar"),
+                    dices: document.getElementById("dices"),
+                    sendButton: document.getElementById("sendButton"),
+                    sessionTitle: document.getElementById("sessionTitle")
+                };
+
+                this.currentCharId = "";
+
+                this.inicializar();
+            }
+
+            inicializar() {
+                this.configurarEventos();
+                this.carregarDadosSessao();
+            }
+
+            configurarEventos() {
+                // Configurar eventos de mensagem da iframe do dado
+                window.addEventListener('message', (event) => {
+                    if (event.data.result) {
+                        this.enviarMensagem('🎲  ' + event.data.result + '  🎲');
+                    }
+                    if (event.data === "closeDice") {
+                        this.fecharDado();
+                        this.elementos.messageInput.focus();
+                    }
+                });
+
+                // Configurar evento de tecla Enter
+                this.elementos.messageInput.addEventListener('keyup', (event) => {
+                    if (event.keyCode === 13) {
+                        this.enviarMensagem();
+                    }
+                });
+            }
+
+            carregarDadosSessao() {
+                if (target) {
+                    const mesaAtual = getDataById(target, db.mesas);
+                    this.elementos.sessionTitle.innerHTML = "Ao vivo - " + mesaAtual["Nome_Mesa"];
+                }
+            }
+
+            rolarDado(lados) {
+                this.elementos.overlay.src = "../html/dice.html?faces=" + lados;
+                this.elementos.overlay.classList.remove("disabled");
+            }
+
+            fecharDado() {
+                this.elementos.overlay.classList.add("disabled");
+                this.elementos.overlay.src = "";
+            }
+
+            enviarMensagem(mensagemPreDefinida = "") {
+                if (this.currentCharId === "") {
+                    return;
+                }
+
+                const personagem = getDataById(this.currentCharId, db.fichas);
+                const nomeChar = personagem["Nome_Personagem"];
+                const mensagem = mensagemPreDefinida || this.elementos.messageInput.value;
+
+                if (mensagem === "") {
+                    return;
+                }
+
+                // Limpar input se não for mensagem predefinida
+                if (!mensagemPreDefinida) {
+                    this.elementos.messageInput.value = "";
+                }
+
+                const elementoMensagem = document.createElement("div");
+                elementoMensagem.classList.add("message");
+                elementoMensagem.innerHTML = `<b>${nomeChar}</b>: ${mensagem}<br><br>`;
+
+                this.elementos.gameplay.appendChild(elementoMensagem);
+                this.elementos.gameplay.scrollTop = this.elementos.gameplay.scrollHeight;
+            }
+
+            renderizarListaPersonagens(dados) {
+                this.elementos.characterList.innerHTML = "";
+
+                dados.forEach(personagem => {
+                    const avatarPersonagem = document.createElement("img");
+                    avatarPersonagem.src = personagem["portrait_personagem [image]"];
+                    avatarPersonagem.alt = personagem["Nome_Personagem"];
+                    avatarPersonagem.classList.add("character-avatar");
+
+                    avatarPersonagem.onclick = () => {
+                        this.selecionarPersonagem(personagem);
+                    };
+
+                    this.elementos.characterList.appendChild(avatarPersonagem);
+                });
+            }
+
+            selecionarPersonagem(personagem) {
+                this.currentCharId = personagem["__PowerAppsId__"];
+                this.elementos.currentChar.innerHTML = personagem["Nome_Personagem"];
+
+                // Habilitar elementos da interface
+                this.elementos.dices.classList.remove("disabled");
+                this.elementos.sendButton.classList.remove("disabled");
+                this.elementos.messageInput.classList.remove("disabled");
+                this.elementos.messageInput.focus();
+            }
+        }
+
+        // Inicialização
+        let chat;
+        window.onload = function() {
+            populateMenus();
+
+            chat = new GerenciadorChat();
+            chat.renderizarListaPersonagens(db.fichas);
+        };
+
+        // Função global para acesso externo
+        function rollDice(sides) {
+            chat.rolarDado(sides);
+        }
+    </script>
+</body>
+
+</html>
