@@ -24,7 +24,8 @@ body {
 
 #dices.disabled,
 .send-button.disabled,
-.message-input.disabled {
+.message-input.disabled,
+#sideContent>li>.disabled {
     pointer-events: none;
     opacity: .3;
     transition: opacity 0.3s ease-in-out;

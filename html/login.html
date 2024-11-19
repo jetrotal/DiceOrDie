@@ -82,6 +82,12 @@ Conferir href linha 13
             }
 
             popularUsuariosValidos(usuariosValidos, db.cadastros);
+            //permitir login com enter
+            document.addEventListener("keydown", function(event) {
+                if (event.key === "Enter") {
+                    login();
+                }
+            });
 
             function login() {
                 // Obtenha os valores inseridos pelo usuário
@@ -95,7 +101,6 @@ Conferir href linha 13
 
                 // Mensagem de sucesso ou erro
                 if (usuarioEncontrado) {
-                    alert("Login bem-sucedido! Bem-vindo(a)!");
                     // Redirecionar para mesas.html com o ID do usuário
                     window.location.href = `mesas.html?session=${usuarioEncontrado.id}`;
                 } else {

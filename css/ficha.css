@@ -84,7 +84,8 @@ textarea {
 
 .attribute-circle {
     position: relative;
-    text-align: center
+    text-align: center;
+    text-align-last: center;
 }
 
 .attribute-circle label {

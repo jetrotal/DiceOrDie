@@ -13,6 +13,22 @@
 </head>
 
 <body>
+
+    <img class="deco-axe" src="../img/axe.png"></img>
+    <nav class="top-menu">
+        <div class="logo">
+            <img src="../img/logo_80x120.png" alt="Logo">
+        </div>
+        <ul id="topContent">
+            <!-- MENU GERADO POR JS !-->
+        </ul>
+    </nav>
+    <div class="side-menu">
+        <ul id="sideContent">
+            <!-- MENU GERADO POR JS !-->
+        </ul>
+    </div>
+
     <div class="section">
         <!-- Coluna Esquerda -->
         <div class="left-column">
@@ -50,6 +66,7 @@
         const idProcurado = target;
         const usuario = getDataById(idProcurado, db.cadastros);
 
+        populateMenus();
         if (usuario) {
             document.getElementById('profileImage').src = usuario['Foto_perfil [image]'];
             document.getElementById('nickname').textContent = usuario.Nome;

@@ -1,5 +1,6 @@
 // mesa.js
 
+podeVoltar = true;
 class GerenciadorMesa {
     constructor() {
         this.elementos = {

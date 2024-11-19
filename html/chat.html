@@ -171,6 +171,8 @@
                 this.currentCharId = personagem["__PowerAppsId__"];
                 this.elementos.currentChar.innerHTML = personagem["Nome_Personagem"];
 
+                document.getElementById("detalheChar").classList.remove("disabled");
+                document.getElementById("detalheChar").attributes.href.value = `./ficha.html?session=${session}&view=${this.currentCharId}`;
                 // Habilitar elementos da interface
                 this.elementos.dices.classList.remove("disabled");
                 this.elementos.sendButton.classList.remove("disabled");
@@ -182,7 +184,28 @@
         // Inicialização
         let chat;
         window.onload = function() {
-            populateMenus();
+            const menuData = {
+                top: defaultMenuData.top,
+                side: [{
+                    url: `./ficha.html?session=${session}`,
+                    text: `Novo Personagem`
+                }, {
+                    url: `./ficha.html?session=${session}`,
+                    text: `Detalhes do Personagem`
+                }, {
+                    url: `./mesa.html?session=${session}&view=${target}`,
+                    text: `Detalhes da Mesa`
+                }, {
+                    url: `./mapa.html?session=${session}`,
+                    text: `Mapa`,
+                    type: "popup"
+                }, {
+                    url: `./mesas.html?session=${session}`,
+                    text: `Abandonar Partida`
+                }]
+            };
+
+            populateMenus(menuData);
 
             chat = new GerenciadorChat();
             chat.renderizarListaPersonagens(db.fichas);

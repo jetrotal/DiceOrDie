@@ -1,4 +1,5 @@
-// cadastro.js
+// conta.js
+podeVoltar = true;
 class GerenciadorCadastro {
     constructor() {
         this.expLevels = {
