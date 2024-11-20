@@ -1,9 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8">
-    <title>Ficha</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dice or Die - Ficha de Personagem</title>
     <link rel="stylesheet" href="../css/ficha.css">
     <script src="../js/mockupData.js" defer></script>
 
@@ -12,54 +13,47 @@
 <body>
     <!-- partial:index.partial.html -->
     <!DOCTYPE html>
-    <html lang="pt-BR">
 
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Ficha de Personagem</title>
-    </head>
 
-    <body>
-        <script src="../js/utils.js?12"></script>
-        <script src="../js/menus.js"></script>
-        <div class="grain"></div>
-        <img class="deco-axe" src="../img/axe.png"></img>
-        <nav class="top-menu">
-            <div class="logo">
-                <img src="../img/logo_80x120.png" alt="Logo">
-            </div>
-            <ul id="topContent">
-                <!-- MENU GERADO POR JS !-->
-            </ul>
-        </nav>
-        <div class="side-menu">
-            <ul id="sideContent">
-                <!-- MENU GERADO POR JS !-->
-            </ul>
+    <script src="../js/utils.js?12"></script>
+    <script src="../js/menus.js"></script>
+    <div class="grain"></div>
+    <img class="deco-axe" src="../img/axe.png"></img>
+    <nav class="top-menu">
+        <div class="logo">
+            <img src="../img/logo_80x120.png" alt="Logo">
         </div>
-        <h1>Ficha de Personagem</h1>
-        <form id="mainForm">
-            <div class="section">
-                <h2>Dados Gerais</h2>
-                <div class="form-group">
-                    <label>Nome do Jogador</label>
-                    <input required type="text" class="form-control" id="playerName" readonly>
+        <ul id="topContent">
+            <!-- MENU GERADO POR JS !-->
+        </ul>
+    </nav>
+    <div class="side-menu">
+        <ul id="sideContent">
+            <!-- MENU GERADO POR JS !-->
+        </ul>
+    </div>
+    <h1>Ficha de Personagem</h1>
+    <form id="mainForm">
+        <div class="section">
+            <h2>Dados Gerais</h2>
+            <div class="form-group">
+                <label>Nome do Jogador</label>
+                <input required type="text" class="form-control" id="playerName" readonly>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <label>Nome do Personagem</label>
+                    <input required type="text" class="form-control" id="characterName">
                 </div>
-                <div class="row">
-                    <div class="col">
-                        <label>Nome do Personagem</label>
-                        <input required type="text" class="form-control" id="characterName">
-                    </div>
-                    <div class="col" style="flex: 0 0 100px;">
-                        <label>Nível</label>
-                        <input required type="number" class="form-control" id="level">
-                    </div>
+                <div class="col" style="flex: 0 0 100px;">
+                    <label>Nível</label>
+                    <input required type="number" class="form-control" id="level">
                 </div>
-                <div class="row">
-                    <div class="col">
-                        <label>Raça</label>
-                        <select class="form-control" id="race" required>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <label>Raça</label>
+                    <select class="form-control" id="race" required>
               <option value="">Raça</option>
               <option>Humano</option>
               <option>Elfo</option>
@@ -72,10 +66,10 @@
               <option>Tiefling</option>
               <option>Aasimar</option>
             </select>
-                    </div>
-                    <div class="col">
-                        <label>Classe</label>
-                        <select class="form-control" id="class" required>
+                </div>
+                <div class="col">
+                    <label>Classe</label>
+                    <select class="form-control" id="class" required>
               <option value="">Classe</option>
               <option>Bárbaro</option>
               <option>Bardo</option>
@@ -90,63 +84,61 @@
               <option>Paladino </option>
                 <option>Patrulheiro</option>
             </select>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col">
-                        <label>Pontos de Vida</label>
-                        <input required type="number" class="form-control" id="hp">
-                    </div>
-                    <div class="col">
-                        <label>Classe de Armadura</label>
-                        <input required type="number" class="form-control" id="ac">
-                    </div>
-                </div>
-                <h2>Atributos</h2>
-                <div class="attributes">
-                    <div class="attribute-circle">
-                        <input required type="number" id="strength">
-                        <label>FORÇA</label>
-                    </div>
-                    <div class="attribute-circle">
-                        <input required type="number" id="dexterity">
-                        <label>DESTREZA</label>
-                    </div>
-                    <div class="attribute-circle">
-                        <input required type="number" id="constitution">
-                        <label>CONSTITUIÇÃO</label>
-                    </div>
-                    <div class="attribute-circle">
-                        <input required type="number" id="intelligence">
-                        <label>INTELIGÊNCIA</label>
-                    </div>
-                    <div class="attribute-circle">
-                        <input required type="number" id="wisdom">
-                        <label>SABEDORIA</label>
-                    </div>
-                    <div class="attribute-circle">
-                        <input required type="number" id="charisma">
-                        <label>CARÍSMA</label>
-                    </div>
-                </div>
-                <br>
-                <div>
-                    <h2>Foto do Personagem</h2>
-                    <div class="avatar-upload">
-                        <img src="https://placehold.co/150.png" alt="Avatar" id="profilePreview" class="avatar-preview">
-                        <button type="button" class="upload-button" id="uploadButton">Adicionar Avatar</button>
-                    </div>
                 </div>
             </div>
-            <script>
-                // Set player name as readonly
-                document.getElementById('playerName').value = "Player";
-            </script>
-            <button type="submit" id="submitter" style="width:100%">Enviar</button>
-        </form>
-    </body>
+            <div class="row">
+                <div class="col">
+                    <label>Pontos de Vida</label>
+                    <input required type="number" class="form-control" id="hp">
+                </div>
+                <div class="col">
+                    <label>Classe de Armadura</label>
+                    <input required type="number" class="form-control" id="ac">
+                </div>
+            </div>
+            <h2>Atributos</h2>
+            <div class="attributes">
+                <div class="attribute-circle">
+                    <input required type="number" id="strength">
+                    <label>FORÇA</label>
+                </div>
+                <div class="attribute-circle">
+                    <input required type="number" id="dexterity">
+                    <label>DESTREZA</label>
+                </div>
+                <div class="attribute-circle">
+                    <input required type="number" id="constitution">
+                    <label>CONSTITUIÇÃO</label>
+                </div>
+                <div class="attribute-circle">
+                    <input required type="number" id="intelligence">
+                    <label>INTELIGÊNCIA</label>
+                </div>
+                <div class="attribute-circle">
+                    <input required type="number" id="wisdom">
+                    <label>SABEDORIA</label>
+                </div>
+                <div class="attribute-circle">
+                    <input required type="number" id="charisma">
+                    <label>CARÍSMA</label>
+                </div>
+            </div>
+            <br>
+            <div>
+                <h2>Foto do Personagem</h2>
+                <div class="avatar-upload">
+                    <img src="https://placehold.co/150.png" alt="Avatar" id="profilePreview" class="avatar-preview">
+                    <button type="button" class="upload-button" id="uploadButton">Adicionar Avatar</button>
+                </div>
+            </div>
+        </div>
+        <script>
+            // Set player name as readonly
+            document.getElementById('playerName').value = "Player";
+        </script>
+        <button type="submit" id="submitter" style="width:100%">Enviar</button>
+    </form>
 
-    </html>
     <!-- partial -->
     <script src="../js/ficha.js"></script>
 

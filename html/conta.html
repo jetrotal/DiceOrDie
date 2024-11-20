@@ -3,9 +3,11 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Conta</title>
+    <title>Dice or Die - Conta</title>
     <link rel="stylesheet" href="../css/conta.css">
     <script src="../js/mockupData.js" defer></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 </head>
 
@@ -14,101 +16,91 @@
     <!DOCTYPE html>
     <html lang="pt-BR">
 
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Conta</title>
-        <style>
-            /* The existing CSS styles have been omitted for brevity */
-        </style>
-    </head>
 
-    <body>
-        <script src="../js/utils.js"></script>
-        <script src="../js/menus.js"></script>
-        <div class="grain"></div>
-        <img class="deco-axe" src="../img/axe.png"></img>
-        <nav class="top-menu">
-            <div class="logo">
-                <img src="../img/logo_80x120.png" alt="Logo">
-            </div>
-            <ul id="topContent">
-                <!-- MENU GERADO POR JS !-->
-            </ul>
-        </nav>
-        <div class="side-menu" id="sidemenu">
-            <ul id="sideContent">
-                <!-- MENU GERADO POR JS !-->
-            </ul>
+
+    <script src="../js/utils.js"></script>
+    <script src="../js/menus.js"></script>
+    <div class="grain"></div>
+    <img class="deco-axe" src="../img/axe.png"></img>
+    <nav class="top-menu">
+        <div class="logo">
+            <img src="../img/logo_80x120.png" alt="Logo">
         </div>
-        <h1>Conta</h1>
-        <form id="mainForm">
-            <div class="section">
-                <h2>Dados Pessoais</h2>
-                <div class="section-grid">
-                    <div class="form-group">
-                        <label for="nome">Nome</label>
-                        <input required type="text" id="nome" placeholder="Nome" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="sobrenome">Sobrenome</label>
-                        <input required type="text" id="sobrenome" placeholder="Sobrenome" required>
-                    </div>
+        <ul id="topContent">
+            <!-- MENU GERADO POR JS !-->
+        </ul>
+    </nav>
+    <div class="side-menu" id="sidemenu">
+        <ul id="sideContent">
+            <!-- MENU GERADO POR JS !-->
+        </ul>
+    </div>
+    <h1>Conta</h1>
+    <form id="mainForm">
+        <div class="section">
+            <h2>Dados Pessoais</h2>
+            <div class="section-grid">
+                <div class="form-group">
+                    <label for="nome">Nome</label>
+                    <input required type="text" id="nome" placeholder="Nome" required>
                 </div>
                 <div class="form-group">
-                    <label for="genero">Gênero</label>
-                    <select id="genero" required>
+                    <label for="sobrenome">Sobrenome</label>
+                    <input required type="text" id="sobrenome" placeholder="Sobrenome" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="genero">Gênero</label>
+                <select id="genero" required>
             <option value="">Gênero</option>
             <option value="masculino">Masculino</option>
             <option value="feminino">Feminino</option>
             <option value="nao-binario">Não-Binário</option>
           </select>
-                </div>
-                <h2>Data de Nascimento</h2>
+            </div>
+            <h2>Data de Nascimento</h2>
+            <div class="form-group">
+                <label for="nascimento">Data de Nascimento</label>
+                <input required type="date" id="nascimento" required>
+            </div>
+            <h2>Dados Cadastrais</h2>
+            <div class="form-group">
+                <label for="contato">Login</label>
+                <input required type="text" id="contato" placeholder="Celular ou E-mail" required>
+            </div>
+            <div class="section-grid">
                 <div class="form-group">
-                    <label for="nascimento">Data de Nascimento</label>
-                    <input required type="date" id="nascimento" required>
+                    <label for="senha">Senha</label>
+                    <input required type="password" id="senha" placeholder="Novo Password" required>
                 </div>
-                <h2>Dados Cadastrais</h2>
                 <div class="form-group">
-                    <label for="contato">Login</label>
-                    <input required type="text" id="contato" placeholder="Celular ou E-mail" required>
-                </div>
-                <div class="section-grid">
-                    <div class="form-group">
-                        <label for="senha">Senha</label>
-                        <input required type="password" id="senha" placeholder="Novo Password" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="confirmarSenha">Confirmar Senha</label>
-                        <input required type="password" id="confirmarSenha" placeholder="Confirmar Password" required>
-                    </div>
-                </div>
-                <h2>Experiência</h2>
-                <div class="experience-header">
-                    <div class="experience-level" id="expLevel">Goblin</div>
-                </div>
-                <div class="experience-dots">
-                    <button type="button" class="exp-controls" id="decreaseExp">-</button>
-                    <div class="exp-dot" data-level="1"></div>
-                    <div class="exp-dot" data-level="2"></div>
-                    <div class="exp-dot" data-level="3"></div>
-                    <div class="exp-dot" data-level="4"></div>
-                    <div class="exp-dot" data-level="5"></div>
-                    <button type="button" class="exp-controls" id="increaseExp">+</button>
-                </div>
-                <h2>Foto de Perfil</h2>
-                <div class="avatar-upload">
-                    <img src="https://placehold.co/150.png" alt="Avatar" id="profilePreview" class="avatar-preview">
-                    <input type="file" id="profileinput" hidden accept="image/*">
-                    <button type="button" class="upload-button" id="uploadButton">Adicionar Foto</button>
+                    <label for="confirmarSenha">Confirmar Senha</label>
+                    <input required type="password" id="confirmarSenha" placeholder="Confirmar Password" required>
                 </div>
             </div>
-            <button type="submit" id="submitter" style="width:100%">Enviar</button>
-        </form>
-    </body>
+            <h2>Experiência</h2>
+            <div class="experience-header">
+                <div class="experience-level" id="expLevel">Goblin</div>
+            </div>
+            <div class="experience-dots">
+                <button type="button" class="exp-controls" id="decreaseExp">-</button>
+                <div class="exp-dot" data-level="1"></div>
+                <div class="exp-dot" data-level="2"></div>
+                <div class="exp-dot" data-level="3"></div>
+                <div class="exp-dot" data-level="4"></div>
+                <div class="exp-dot" data-level="5"></div>
+                <button type="button" class="exp-controls" id="increaseExp">+</button>
+            </div>
+            <h2>Foto de Perfil</h2>
+            <div class="avatar-upload">
+                <img src="https://placehold.co/150.png" alt="Avatar" id="profilePreview" class="avatar-preview">
+                <input type="file" id="profileinput" hidden accept="image/*">
+                <button type="button" class="upload-button" id="uploadButton">Adicionar Foto</button>
+            </div>
+        </div>
+        <button type="submit" id="submitter" style="width:100%">Enviar</button>
+    </form>
 
-    </html>
     <!-- partial -->
     <script src="../js/conta.js"></script>
 

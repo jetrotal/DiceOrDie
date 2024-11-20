@@ -1,58 +1,48 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8">
-    <title>Mesa</title>
+    <title>Dice or Die - Detalhes da Mesa</title>
     <link rel="stylesheet" href="../css/mesa.css">
     <script src="../js/mockupData.js" defer></script>
 
 </head>
 
 <body>
-    <!-- partial:index.partial.html -->
-    <!DOCTYPE html>
-    <html lang="pt-BR">
 
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Mesa de RPG</title>
-    </head>
-
-    <body>
-        <script src="../js/utils.js"></script>
-        <script src="../js/menus.js"></script>
-        <div class="grain"></div>
-        <img class="deco-axe" src="../img/axe.png"></img>
-        <nav class="top-menu">
-            <div class="logo">
-                <img src="../img/logo_80x120.png" alt="Logo">
-            </div>
-            <ul id="topContent">
-                <!-- MENU GERADO POR JS !-->
-            </ul>
-        </nav>
-        <div class="side-menu">
-            <ul id="sideContent">
-                <!-- MENU GERADO POR JS !-->
-            </ul>
+    <script src="../js/utils.js"></script>
+    <script src="../js/menus.js"></script>
+    <div class="grain"></div>
+    <img class="deco-axe" src="../img/axe.png"></img>
+    <nav class="top-menu">
+        <div class="logo">
+            <img src="../img/logo_80x120.png" alt="Logo">
         </div>
-        <header class="header">
-            <h1 id="paginaAtual">Mesa</h1>
-        </header>
-        <form id="mainForm">
-            <div class="section">
-                <h2>Dados Gerais</h2>
-                <form id="mainForm" action="?">
-                    <div class="form-group">
-                        <label>Nome da Mesa</label>
-                        <input required type="text" class="form-control" id="nomeMesa" placeholder="Nome da Mesa">
-                    </div>
-                    <div class="form-row">
-                        <div class="form-col">
-                            <label>Sistema</label>
-                            <select class="form-control" id="sistema" required>
+        <ul id="topContent">
+            <!-- MENU GERADO POR JS !-->
+        </ul>
+    </nav>
+    <div class="side-menu">
+        <ul id="sideContent">
+            <!-- MENU GERADO POR JS !-->
+        </ul>
+    </div>
+    <header class="header">
+        <h1 id="paginaAtual">Mesa</h1>
+    </header>
+    <form id="mainForm">
+        <div class="section">
+            <h2>Dados Gerais</h2>
+            <form id="mainForm" action="?">
+                <div class="form-group">
+                    <label>Nome da Mesa</label>
+                    <input required type="text" class="form-control" id="nomeMesa" placeholder="Nome da Mesa">
+                </div>
+                <div class="form-row">
+                    <div class="form-col">
+                        <label>Sistema</label>
+                        <select class="form-control" id="sistema" required>
                 <option value="">Selecione o Sistema</option>
                 <option>D&D</option>
                 <option>GURPS</option>
@@ -62,10 +52,10 @@
                 <option>3D&T</option>
                 <option>13a Era</option>
               </select>
-                        </div>
-                        <div class="form-col">
-                            <label>Qtd. de Jogadores</label>
-                            <select class="form-control" id="qtdJogadores" required>
+                    </div>
+                    <div class="form-col">
+                        <label>Qtd. de Jogadores</label>
+                        <select class="form-control" id="qtdJogadores" required>
                 <option value="">Selecione</option>
                 <option>1</option>
                 <option>2</option>
@@ -78,43 +68,40 @@
                 <option>9</option>
                 <option>10</option>
               </select>
-                        </div>
                     </div>
-                    <div class="form-row">
-                        <div class="form-col">
-                            <label>Autor</label>
-                            <input required type="text" class="form-control" id="autor" readonly>
-                        </div>
-                        <div class="form-col">
-                            <label>Aberto ao Público?</label>
-                            <div class="toggle-container">
-                                <label class="switch">
+                </div>
+                <div class="form-row">
+                    <div class="form-col">
+                        <label>Autor</label>
+                        <input required type="text" class="form-control" id="autor" readonly>
+                    </div>
+                    <div class="form-col">
+                        <label>Aberto ao Público?</label>
+                        <div class="toggle-container">
+                            <label class="switch">
                   <input required type="checkbox" id="publico" checked>
                   <span class="slider"></span>
                 </label>
-                                <span class="toggle-label" id="publicoLabel">Sim</span>
-                            </div>
+                            <span class="toggle-label" id="publicoLabel">Sim</span>
                         </div>
                     </div>
-                    <div class="form-group">
-                        <h2>Descrição da Campanha</h2>
-                        <textarea required class="form-control" id="descricao" rows="6" placeholder="Descrição Detalhada"></textarea>
+                </div>
+                <div class="form-group">
+                    <h2>Descrição da Campanha</h2>
+                    <textarea required class="form-control" id="descricao" rows="6" placeholder="Descrição Detalhada"></textarea>
+                </div>
+                <div class="form-group">
+                    <h2>Capa da Campanha</h2>
+                    <div class="avatar-upload">
+                        <img src="https://placehold.co/150.png" alt="Capa da Campanha" id="campaignPreview" class="avatar-preview">
+                        <button type="button" class="upload-button" id="uploadButton">Adicionar Capa</button>
                     </div>
-                    <div class="form-group">
-                        <h2>Capa da Campanha</h2>
-                        <div class="avatar-upload">
-                            <img src="https://placehold.co/150.png" alt="Capa da Campanha" id="campaignPreview" class="avatar-preview">
-                            <button type="button" class="upload-button" id="uploadButton">Adicionar Capa</button>
-                        </div>
-                    </div>
-            </div>
-            <button type="submit" id="submitter" style="width:100%">Enviar</button>
-            </form>
-    </body>
-
-    </html>
-    <!-- partial -->
-    <script src="../js/mesa.js"></script>
+                </div>
+        </div>
+        <button type="submit" id="submitter" style="width:100%">Enviar</button>
+        </form>
+        <!-- partial -->
+        <script src="../js/mesa.js"></script>
 
 </body>
 

@@ -6,38 +6,31 @@
     <title>Lançar Dados</title>
     <link rel="stylesheet" href="../css/dice.css">
 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/cannon.js/0.6.2/cannon.min.js"></script>
+
 </head>
 
+
 <body>
-    <!-- partial:index.partial.html -->
-    <!DOCTYPE html>
-    <html lang="en">
-
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>3D Dice Roller</title>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/cannon.js/0.6.2/cannon.min.js"></script>
-    </head>
-
-    <body>
-        <main>
-            <div id="controls" class="overlay">
-                <label for="faces" style="display:none">Choose dice type:</label>
-                <select id="faces">
+    <main>
+        <div id="controls" class="overlay">
+            <label for="faces" style="display:none">Choose dice type:</label>
+            <select id="faces">
           <option value="4">4-sided (d4)</option>
           <option value="6">6-sided (d6)</option>
           <option value="8">8-sided (d8)</option>
           <option value="12">12-sided (d12)</option>
           <option value="20" selected>20-sided (d20)</option>
         </select>
-            </div>
-            <div id="result" class="overlay" aria-live="polite"></div>
-        </main>
-    </body>
+        </div>
+        <div id="result" class="overlay" aria-live="polite"></div>
+    </main>
 
-    </html>
+
+
     <!-- partial -->
     <script src="../js/dice.js"></script>
 
