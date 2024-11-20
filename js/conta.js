@@ -71,7 +71,7 @@ class GerenciadorCadastro {
 
     configurarValidacaoFormulario() {
         this.elementos.submitter.addEventListener("click", (e) => {
-            if (!CheckRequired(document.getElementById("mainForm"))) {
+            if (!utils.CheckRequired(document.getElementById("mainForm"))) {
                 scroll(0, 0);
                 return;
             }
@@ -118,7 +118,7 @@ window.onload = function() {
     cadastro = new GerenciadorCadastro();
 
     if (session == target && target != "new") {
-        const usuario = getDataById(target, db.cadastros);
+        const usuario = utils.getDataById(target, db.cadastros);
         console.log(usuario);
 
         // Fill in basic form fields
@@ -160,9 +160,7 @@ window.onload = function() {
         }
 
         // Lock elements to prevent editing if needed
-        if (typeof lockElements === "function") {
-            //lockElements(cadastro);
-        }
+        utils.lockElements(cadastro);
 
         // Modify submit button behavior
         const submitButton = document.querySelector('button[type="submit"], input[type="submit"]') ||

@@ -47,7 +47,7 @@ class GerenciadorFicha {
 
     configurarValidacaoFormulario() {
         this.elementos.botaoEnviar.addEventListener("click", (e) => {
-            if (!CheckRequired(document.getElementById("mainForm"))) {
+            if (!utils.CheckRequired(document.getElementById("mainForm"))) {
                 scroll(0, 0);
                 return;
             }
@@ -108,61 +108,14 @@ class GerenciadorFicha {
         });
     }
 }
+
 let ficha;
 window.onload = function() {
     populateMenus();
     ficha = new GerenciadorFicha();
     if (target) {
-        const usuario = getDataById(target, db.fichas);
+        const usuario = utils.getDataById(target, db.fichas);
         console.log(usuario);
-
-        /* 0
-: 
-Atr_Carisma
-: 
-8
-Atr_Constituicao
-: 
-12
-Atr_Destreza
-: 
-14
-Atr_Forca
-: 
-13
-Atr_Inteligencia
-: 
-10
-Atr_Sabedoria
-: 
-8
-Classe
-: 
-"Guerreiro"
-Classe_Armadura
-: 
-13
-Nivel
-: 
-"1"
-Nome_Jogador
-: 
-"Marco"
-Nome_Personagem
-: 
-"Mokidesia"
-PV
-: 
-14
-Raca
-: 
-"Anão"
-portrait_personagem [image]
-: 
-"https://ugc-idle.s3-us-west-2.amazonaws.com/94608e854d9747efaa6ef81d7dc7bd36.jpg"
-__PowerAppsId__
-: 
-"5badcee7eeb6496aa999f9e286e31677" */
 
         ficha.elementos.nomeJogador.value = usuario.Nome_Jogador;
         ficha.elementos.nomePersonagem.value = usuario.Nome_Personagem;
@@ -179,8 +132,8 @@ __PowerAppsId__
         ficha.elementos.carisma.value = usuario.Atr_Carisma;
         ficha.elementos.previewPerfil.src = usuario["portrait_personagem [image]"];
 
-        lockElements(ficha)
-            //add button
+        utils.lockElements(ficha);
+
         if (usuario.Vagas === "true") {
             mesa.elementos.botaoEnviar.classList.remove("disabled");
             mesa.elementos.botaoEnviar.innerText = "Participar";
@@ -202,5 +155,4 @@ __PowerAppsId__
             mesa.elementos.botaoEnviar = new_element;
         }
     }
-
 };

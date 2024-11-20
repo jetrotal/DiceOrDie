@@ -64,7 +64,7 @@
     <script defer>
         // Uso da função
         const idProcurado = target;
-        const usuario = getDataById(idProcurado, db.cadastros);
+        const usuario = utils.getDataById(idProcurado, db.cadastros);
 
         populateMenus();
         if (usuario) {

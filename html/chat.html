@@ -109,7 +109,7 @@
 
             carregarDadosSessao() {
                 if (target) {
-                    const mesaAtual = getDataById(target, db.mesas);
+                    const mesaAtual = utils.getDataById(target, db.mesas);
                     this.elementos.sessionTitle.innerHTML = "Ao vivo - " + mesaAtual["Nome_Mesa"];
                 }
             }
@@ -129,7 +129,7 @@
                     return;
                 }
 
-                const personagem = getDataById(this.currentCharId, db.fichas);
+                const personagem = utils.getDataById(this.currentCharId, db.fichas);
                 const nomeChar = personagem["Nome_Personagem"];
                 const mensagem = mensagemPreDefinida || this.elementos.messageInput.value;
 
