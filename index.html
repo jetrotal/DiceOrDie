@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dice or Die - Bem Vindo</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://jetrotal.github.io/DiceOrDie/css/estilos_gerais.css">
+    <link rel="stylesheet" href="./css/estilos_gerais.css">
     <link rel="stylesheet" href="https://jetrotal.github.io/DiceOrDie/css/menus.css">
     <style>
         body {
@@ -178,19 +178,18 @@
 
     <nav class="top-menu">
         <div class="logo">
-            <img src="https://jetrotal.github.io/DiceOrDie/img/logo_80x120.png" alt="Dice or Die Logo">
+            <img src="./img/logo_80x120.png" alt="Dice or Die Logo">
         </div>
         <div>
         </div>
     </nav>
-    <br>
-    <main style="position: absolute;margin:auto; width: 100%; top:150px">
-        <section class="hero section" style="max-width: 1100px; max-height: 500px; margin: auto;">
+    <main style="position: absolute;margin:auto; width: 100%; top:125px">
+        <section class="hero section" style="max-width: 1100px; max-height: 760px; margin: auto;">
             <i class="fas fa-dice-d20 dice-decoration dice-1"></i>
             <i class="fas fa-dice-d6 dice-decoration dice-2"></i>
 
             <div class="hero-content">
-                <h1>Dice or Die</h1>
+                <img src="./img/logo_bigger.png" alt="Dice or Die Logo"></img>
                 <p>Mergulhe em aventuras épicas. Crie histórias memoráveis. Viva a magia do RPG.</p>
                 <div class="action-buttons">
                     <a href="./html/conta.html?session=new" class="btn">Criar uma conta</a>
@@ -199,7 +198,7 @@
             </div>
 
             <div class="scroll-indicator">
-                <i class="fas fa-chevron-down fa-2x"></i>
+                <i class="fas fa-chevron-down fa-2x" onclick="/*scroll to bottom js*/ document.documentElement.scrollTop = document.documentElement.scrollHeight;"></i>
             </div>
         </section>
 
