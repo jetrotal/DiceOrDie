@@ -35,13 +35,13 @@ body:after {
     left: 0;
     overflow: hidden;
     display: block;
-    background-image: url(https://jetrotal.github.io/DiceOrDie/img/black-felt.png);
+    background-image: url(../img/black-felt.png);
     position: fixed;
     z-index: -1;
 }
 
 .grain {
-    background-image: url(https://jetrotal.github.io/DiceOrDie/img/Grain-Texture.png);
+    background-image: url(../img/Grain-Texture.png);
     background-repeat: repeat;
     opacity: 0.1;
     pointer-events: none;
@@ -70,7 +70,7 @@ h1 {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
     padding: var(--padding) calc(2 * var(--padding));
     border-image-repeat: round;
-    border-image: url(https://jetrotal.github.io/DiceOrDie/img/ContainerBG.png) 26 fill/26px/0 repeat;
+    border-image: url(../img/ContainerBG.png) 26 fill/26px/0 repeat;
 }
 
 .section h2 {

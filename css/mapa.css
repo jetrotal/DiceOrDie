@@ -61,7 +61,7 @@ canvas {
 .modal-section {
     background-color: var(--color-section-background);
     border: 1px solid var(--color-section-border);
-    border-image: url(https://jetrotal.github.io/DiceOrDie/img/ContainerBG.png) 26 fill/26px/0 stretch;
+    border-image: url(../img/ContainerBG.png) 26 fill/26px/0 stretch;
     display: none;
     left: 50%;
     min-width: 300px;

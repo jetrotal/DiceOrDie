@@ -12,7 +12,7 @@ if (!target) {
 const defaultMenuData = {
     top: [
         { url: `./mesas.html?session=${session}`, text: `Home` },
-        { url: `./mesas.html?session=${session}`, text: `Loja` },
+        { url: `./loja.html?session=${session}`, text: `Loja` },
         { url: `./perfil.html?session=${session}&view=${target}`, text: `Perfil` },
         { url: `../index.html`, text: `Sair` }
     ],

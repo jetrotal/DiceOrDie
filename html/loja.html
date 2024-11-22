@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dice or Die - Loja</title>
+    <link rel="stylesheet" href="../css/estilos_gerais.css">
+    <link rel="stylesheet" href="../css/menus.css">
+    <style>
+        body {
+            color: #fff;
+            max-width: 800px;
+            padding-left: 270px
+        }
+        
+        .main-content {
+            margin-top: 20px;
+        }
+        
+        .product-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+        
+        .product-item {
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            padding: var(--padding);
+            width: 200px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        
+        .product-item button {
+            margin-bottom: 0
+        }
+        
+        .product-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: var(--border-radius);
+        }
+        
+        .product-item h3 {
+            margin: 10px 0;
+            color: var(--color-heading);
+        }
+        
+        .product-item p {
+            margin: 5px 0;
+            color: var(--color-text);
+        }
+        
+        .product-item button {
+            background-color: var(--color-button-background);
+            border: 0;
+            color: var(--color-section-background);
+            cursor: pointer;
+            padding: 10px 20px;
+            transition: background-color 0.3s ease;
+            width: 100%;
+            margin-top: auto;
+            border-radius: 0;
+        }
+        
+        .product-item button:hover {
+            background-color: var(--color-button-hover-background);
+        }
+    </style>
+    <script src="../js/mockupData.js" defer></script>
+    <script src="../js/utils.js" defer></script>
+    <script src="../js/menus.js" defer></script>
+</head>
+
+<body>
+    <div class="grain"></div>
+    <img class="deco-axe" src="../img/axe.png" alt="Axe">
+    <nav class="top-menu">
+        <div class="logo">
+            <img src="../img/logo_80x120.png" alt="Logo">
+        </div>
+        <ul id="topContent">
+            <!-- MENU GERADO POR JS !-->
+        </ul>
+    </nav>
+    <div class="side-menu">
+        <ul id="sideContent">
+            <!-- MENU GERADO POR JS !-->
+        </ul>
+    </div>
+    <h1>Loja</h1>
+    <div class="main-content">
+        <div class="product-list">
+            <div class="product-item section">
+                <img src="../img/external/mockupData/546c4f50a00f18f5f1889cc2d937a0fe95464cef_128.jpg" alt="Produto 1">
+                <h3>Produto 1</h3>
+                <p>Descrição do produto 1.</p>
+                <p>Preço: R$ 10,00</p>
+                <button>Comprar</button>
+            </div>
+            <div class="product-item section">
+                <img src="../img/external/mockupData/94608e854d9747efaa6ef81d7dc7bd36.jpg" alt="Produto 2">
+                <h3>Produto 2</h3>
+                <p>Descrição do produto 2.</p>
+                <p>Preço: R$ 15,00</p>
+                <button>Comprar</button>
+            </div>
+            <div class="product-item section">
+                <img src="../img/external/mockupData/17159145166646c714af352_1715914516_3x2_lg-256x256.jpg" alt="Produto 3">
+                <h3>Produto 3</h3>
+                <p>Descrição do produto 3.</p>
+                <p>Preço: R$ 20,00</p>
+                <button>Comprar</button>
+            </div>
+            <div class="product-item section">
+                <img src="../img/external/mockupData/lord-of-the-rings-the-hunt-for-gollum_pm6h.128.jpg" alt="Produto 4">
+                <h3>Produto 4</h3>
+                <p>Descrição do produto 4.</p>
+                <p>Preço: R$ 25,00</p>
+                <button>Comprar</button>
+            </div>
+            <div class="product-item section">
+                <img src="../img/external/mockupData/pipa2.jpg" alt="Produto 5">
+                <h3>Produto 5</h3>
+                <p>Descrição do produto 5.</p>
+                <p>Preço: R$ 30,00</p>
+                <button>Comprar</button>
+            </div>
+            <div class="product-item section">
+                <img src="../img/external/mockupData/546c4f50a00f18f5f1889cc2d937a0fe95464cef_128.jpg" alt="Produto 1">
+                <h3>Produto 6</h3>
+                <p>Descrição do produto 6.</p>
+                <p>Preço: R$ 100,00</p>
+                <button>Comprar</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        // Inicialização dos menus
+        window.onload = function() {
+            podeVoltar = true;
+            const menuData = {
+                top: defaultMenuData.top,
+                side: []
+            };
+
+            populateMenus(menuData);
+        };
+    </script>
+</body>
+
+</html>

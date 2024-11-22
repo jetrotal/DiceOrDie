@@ -1,29 +1,5 @@
 // Definição da estrutura dos dados das mesas
-let mesasData = [{
-        id: 1,
-        nomeMesa: "CoC - Especial",
-        sistema: "Call of Cthulhu",
-        qtdJogadores: 10,
-        autor: "Marco",
-        publico: true,
-        descricao: 'Campanha do jogo "Call of Cthulhu", edição de aniversário! Nosso grupo está completando 10 anos de CoC. No final do mês abriremos vagas para novos jogadores. Fiquem no aguardo!',
-        imagem: "https://placehold.co/135x170.png",
-        status: "Lotado",
-        url: "https://placehold.co/135x170.png"
-    },
-    {
-        id: 2,
-        nomeMesa: "Criatura em Tormenta",
-        sistema: "3D&T",
-        qtdJogadores: 7,
-        autor: "teste",
-        publico: true,
-        descricao: "Revivendo uma aventura de Arton! Jogadores interessados devem entrar em contato com email@gmail.com Data limite: 25/08/1994 Horário das partidas: 22 horas.",
-        imagem: "https://placehold.co/135x170.png",
-        status: "Há Vagas",
-        url: "https://placehold.co/135x170.png"
-    }
-];
+let mesasData = [];
 
 class GerenciadorCards {
     constructor() {
@@ -115,8 +91,8 @@ function populateMesasData(dbMesas) {
         autor: mesa.Autor || "Autor desconhecido",
         publico: mesa.Vagas === "true",
         descricao: mesa.Descricao || "Descrição não disponível",
-        imagem: mesa['Banner [image]'] || "https://placehold.co/135x170.png",
+        imagem: mesa['Banner [image]'] || "../img/placeholder.png",
         status: mesa.Vagas === "false" ? "Lotado" : "Disponível",
-        url: `mesa.html?session=${session}&view=${mesa.__PowerAppsId__}` || "https://placehold.co/135x170.png"
+        url: `mesa.html?session=${session}&view=${mesa.__PowerAppsId__}` || "../img/placeholder.png"
     }));
 };

@@ -13,7 +13,7 @@ db = {
             "Atr_Inteligencia": 10,
             "Atr_Sabedoria": 8,
             "Atr_Carisma": 8,
-            "portrait_personagem [image]": "https://ugc-idle.s3-us-west-2.amazonaws.com/94608e854d9747efaa6ef81d7dc7bd36.jpg",
+            "portrait_personagem [image]": "../img/external/mockupData/94608e854d9747efaa6ef81d7dc7bd36.jpg",
             "__PowerAppsId__": "5badcee7eeb6496aa999f9e286e31677"
         },
         {
@@ -30,7 +30,7 @@ db = {
             "Atr_Inteligencia": "23",
             "Atr_Sabedoria": "12",
             "Atr_Carisma": "23",
-            "portrait_personagem [image]": "https://marilianoticia.com.br/wp-content/uploads/2024/08/17159145166646c714af352_1715914516_3x2_lg-256x256.jpg",
+            "portrait_personagem [image]": "../img/external/mockupData/17159145166646c714af352_1715914516_3x2_lg-256x256.jpg",
             "__PowerAppsId__": "3d7eb621628c41cc9eea5ef914310a3c"
         },
         {
@@ -47,7 +47,7 @@ db = {
             "Atr_Inteligencia": "213",
             "Atr_Sabedoria": "123",
             "Atr_Carisma": "213",
-            "portrait_personagem [image]": "https://diaadiaes.com.br/wp-content/uploads/2022/10/pipa2.jpg",
+            "portrait_personagem [image]": "../img/external/mockupData/pipa2.jpg",
             "__PowerAppsId__": "c86ac2675b714083a0a8ef37ee1bd0b6"
         },
         {
@@ -64,7 +64,7 @@ db = {
             "Atr_Inteligencia": "14",
             "Atr_Sabedoria": "19",
             "Atr_Carisma": "28",
-            "portrait_personagem [image]": "https://pm1.aminoapps.com/6262/546c4f50a00f18f5f1889cc2d937a0fe95464cef_128.jpg",
+            "portrait_personagem [image]": "../img/external/mockupData/546c4f50a00f18f5f1889cc2d937a0fe95464cef_128.jpg",
             "__PowerAppsId__": "1a3dee32ab5d40c0b32b05c13445a791"
         },
         {
@@ -81,7 +81,7 @@ db = {
             "Atr_Inteligencia": "12",
             "Atr_Sabedoria": "23",
             "Atr_Carisma": "32",
-            "portrait_personagem [image]": "https://sm.ign.com/t/ign_br/cover/l/lord-of-th/lord-of-the-rings-the-hunt-for-gollum_pm6h.128.jpg",
+            "portrait_personagem [image]": "../img/external/mockupData/lord-of-the-rings-the-hunt-for-gollum_pm6h.128.jpg",
             "__PowerAppsId__": "f3b917e02b06458b9ca720b8180fafec"
         },
         {
@@ -98,7 +98,7 @@ db = {
             "Atr_Inteligencia": "6",
             "Atr_Sabedoria": "7",
             "Atr_Carisma": "7",
-            "portrait_personagem [image]": "https://pm1.aminoapps.com/6262/546c4f50a00f18f5f1889cc2d937a0fe95464cef_128.jpg",
+            "portrait_personagem [image]": "../img/external/mockupData/546c4f50a00f18f5f1889cc2d937a0fe95464cef_128.jpg",
             "__PowerAppsId__": "84bb5f38bc8d4f11b090eb40c8ce1109"
         }
     ],
@@ -111,7 +111,7 @@ db = {
             "Email": "",
             "Senha": 123456789,
             "Experiencia": 4,
-            "Foto_perfil [image]": "https://ugc-idle.s3-us-west-2.amazonaws.com/94608e854d9747efaa6ef81d7dc7bd36.jpg",
+            "Foto_perfil [image]": "img/external/mockupData/94608e854d9747efaa6ef81d7dc7bd36.jpg",
             "__PowerAppsId__": "f61aab96262b449bbcf01a16389878b2"
         },
         {
@@ -123,7 +123,7 @@ db = {
             "Email": "maria@gmail.com",
             "Senha": 123456789,
             "Experiencia": "4",
-            "Foto_perfil [image]": "https://marilianoticia.com.br/wp-content/uploads/2024/08/17159145166646c714af352_1715914516_3x2_lg-256x256.jpg",
+            "Foto_perfil [image]": "../img/external/mockupData/17159145166646c714af352_1715914516_3x2_lg-256x256.jpg",
             "__PowerAppsId__": "4333c6a8c95e474f8ee4116ac7966bfe"
         },
         {
@@ -135,7 +135,7 @@ db = {
             "Email": "abc@abc.com",
             "Senha": 123456789,
             "Experiencia": "3",
-            "Foto_perfil [image]": "https://diaadiaes.com.br/wp-content/uploads/2022/10/pipa2.jpg",
+            "Foto_perfil [image]": "../img/external/mockupData/pipa2.jpg",
             "__PowerAppsId__": "53b6d2f0e7264b17ba0c041f5eeab323"
         },
         {
@@ -147,7 +147,7 @@ db = {
             "Email": "teste@testando.com",
             "Senha": 123456789,
             "Experiencia": "5",
-            "Foto_perfil [image]": "https://pm1.aminoapps.com/6262/546c4f50a00f18f5f1889cc2d937a0fe95464cef_128.jpg",
+            "Foto_perfil [image]": "../img/external/mockupData/546c4f50a00f18f5f1889cc2d937a0fe95464cef_128.jpg",
             "__PowerAppsId__": "1fa89d909b3d47cbb32f2f7c8fe8a88e"
         },
         {
@@ -159,7 +159,7 @@ db = {
             "Email": "11947328923",
             "Senha": 123456789,
             "Experiencia": "4",
-            "Foto_perfil [image]": "https://sm.ign.com/t/ign_br/cover/l/lord-of-th/lord-of-the-rings-the-hunt-for-gollum_pm6h.128.jpg",
+            "Foto_perfil [image]": "../img/external/mockupData/lord-of-the-rings-the-hunt-for-gollum_pm6h.128.jpg",
             "__PowerAppsId__": "576a4d2516314443b96a9e10b6bba027"
         },
         {
@@ -171,7 +171,7 @@ db = {
             "Email": "rizzinicastroj@hotmail.com",
             "Senha": 123456789,
             "Experiencia": "5",
-            "Foto_perfil [image]": "https://pm1.aminoapps.com/6262/546c4f50a00f18f5f1889cc2d937a0fe95464cef_128.jpg",
+            "Foto_perfil [image]": "../img/external/mockupData/546c4f50a00f18f5f1889cc2d937a0fe95464cef_128.jpg",
             "__PowerAppsId__": "fd32cadbc4434c5b95302f50c367f9de"
         },
         {
@@ -183,7 +183,7 @@ db = {
             "Email": "rizzinicastroj@gmail.com",
             "Senha": 123456789,
             "Experiencia": "5",
-            "Foto_perfil [image]": "https://ugc-idle.s3-us-west-2.amazonaws.com/94608e854d9747efaa6ef81d7dc7bd36.jpg",
+            "Foto_perfil [image]": "../img/external/mockupData/94608e854d9747efaa6ef81d7dc7bd36.jpg",
             "__PowerAppsId__": "d2e7daba406f4fe2a04c60dfc6e23712"
         },
         {
@@ -195,7 +195,7 @@ db = {
             "Email": "orlandi.isabelled@gmail.com",
             "Senha": 123456789,
             "Experiencia": "3",
-            "Foto_perfil [image]": "https://marilianoticia.com.br/wp-content/uploads/2024/08/17159145166646c714af352_1715914516_3x2_lg-256x256.jpg",
+            "Foto_perfil [image]": "../img/external/mockupData/17159145166646c714af352_1715914516_3x2_lg-256x256.jpg",
             "__PowerAppsId__": "17cb5e2ae40b4f69917aa01c813cdf87"
         },
         {
@@ -207,7 +207,7 @@ db = {
             "Email": "mauro.etc@live.com",
             "Senha": 123456789,
             "Experiencia": "2",
-            "Foto_perfil [image]": "https://sm.ign.com/t/ign_br/cover/l/lord-of-th/lord-of-the-rings-the-hunt-for-gollum_pm6h.128.jpg",
+            "Foto_perfil [image]": "../img/external/mockupData/lord-of-the-rings-the-hunt-for-gollum_pm6h.128.jpg",
             "__PowerAppsId__": "2c24b3fdf502489a9e2c7b05cac89d65"
         }
     ],
@@ -217,7 +217,7 @@ db = {
             "Qtd_Jogadores": "10",
             "Vagas": "false",
             "Descricao": "Campanha do Jogo \"Call of Cthulhu\", edição de aniversário\n\nNosso grupo está completando 10 anos de CoC.\n\nNo final do mês abriremos vagas para novos jogadores. Fiquem no aguardo!",
-            "Banner [image]": "https://ugc-idle.s3-us-west-2.amazonaws.com/94608e854d9747efaa6ef81d7dc7bd36.jpg",
+            "Banner [image]": "../img/external/mockupData/94608e854d9747efaa6ef81d7dc7bd36.jpg",
             "Autor": "Marco",
             "Chat": "",
             "__PowerAppsId__": "a81fd948aebc421d95fc3b9e257719dc"
@@ -228,7 +228,7 @@ db = {
             "Qtd_Jogadores": "7",
             "Vagas": "true",
             "Descricao": "Revivendo uma aventura de Arton! \n\nJogadores interessados devem entrar em contato com email@gmail.com\n\nData limite: 25/08/1994 \nHorario das partidas: 22 horas.",
-            "Banner [image]": "https://marilianoticia.com.br/wp-content/uploads/2024/08/17159145166646c714af352_1715914516_3x2_lg-256x256.jpg",
+            "Banner [image]": "../img/external/mockupData/17159145166646c714af352_1715914516_3x2_lg-256x256.jpg",
             "Autor": "teste",
             "Chat": "",
             "__PowerAppsId__": "83a3fc4b33ae4667b1e3090f9ecd71a2"
@@ -239,7 +239,7 @@ db = {
             "Qtd_Jogadores": "1",
             "Vagas": "true",
             "Descricao": "Silvio Santos vem aí.",
-            "Banner [image]": "https://diaadiaes.com.br/wp-content/uploads/2022/10/pipa2.jpg",
+            "Banner [image]": "../img/external/mockupData/pipa2.jpg",
             "Autor": "Mauro Luiz",
             "Chat": "",
             "__PowerAppsId__": "01299e1cbb0742449a50262459309b20"
@@ -250,7 +250,7 @@ db = {
             "Qtd_Jogadores": "4",
             "Vagas": "false",
             "Descricao": "Esse é o teste final.",
-            "Banner [image]": "https://pm1.aminoapps.com/6262/546c4f50a00f18f5f1889cc2d937a0fe95464cef_128.jpg",
+            "Banner [image]": "../img/external/mockupData/546c4f50a00f18f5f1889cc2d937a0fe95464cef_128.jpg",
             "Autor": "João Roberto",
             "Chat": "",
             "__PowerAppsId__": "b9fcf5dfc327492784ee19a4be905cd5"
@@ -261,7 +261,7 @@ db = {
             "Qtd_Jogadores": "1",
             "Vagas": "true",
             "Descricao": "23423",
-            "Banner [image]": "https://sm.ign.com/t/ign_br/cover/l/lord-of-th/lord-of-the-rings-the-hunt-for-gollum_pm6h.128.jpg",
+            "Banner [image]": "../img/external/mockupData/lord-of-the-rings-the-hunt-for-gollum_pm6h.128.jpg",
             "Autor": "João Roberto",
             "Chat": "",
             "__PowerAppsId__": "37f121261baf4fb39d8f7cd05a15f3d8"
@@ -272,7 +272,7 @@ db = {
             "Qtd_Jogadores": "10",
             "Vagas": "true",
             "Descricao": "Surfadores de enchente! SHow de bola!",
-            "Banner [image]": "https://pm1.aminoapps.com/6262/546c4f50a00f18f5f1889cc2d937a0fe95464cef_128.jpg",
+            "Banner [image]": "../img/external/mockupData/546c4f50a00f18f5f1889cc2d937a0fe95464cef_128.jpg",
             "Autor": "João Roberto",
             "Chat": "",
             "__PowerAppsId__": "143b4b0f4c2547ada98b5ea8461d567d"
@@ -283,7 +283,7 @@ db = {
             "Qtd_Jogadores": "5",
             "Vagas": "true",
             "Descricao": "Aventureiros partem para Xexenia para salvar a Xena",
-            "Banner [image]": "https://ugc-idle.s3-us-west-2.amazonaws.com/94608e854d9747efaa6ef81d7dc7bd36.jpg",
+            "Banner [image]": "../img/external/mockupData/94608e854d9747efaa6ef81d7dc7bd36.jpg",
             "Autor": "Jorge",
             "Chat": "",
             "__PowerAppsId__": "323fdbfd734141a0abd7f1dc1c67a981"
@@ -294,7 +294,7 @@ db = {
             "Qtd_Jogadores": "3",
             "Vagas": "true",
             "Descricao": "Experimento errado em laboratorio dá errado, o que pode dar errado? É errando que se aprende a errar, né.",
-            "Banner [image]": "https://marilianoticia.com.br/wp-content/uploads/2024/08/17159145166646c714af352_1715914516_3x2_lg-256x256.jpg",
+            "Banner [image]": "../img/external/mockupData/17159145166646c714af352_1715914516_3x2_lg-256x256.jpg",
             "Autor": "Mauro Luiz",
             "Chat": "",
             "__PowerAppsId__": "e0dd7fb0b1774d0eac0cc63fc492a56f"
