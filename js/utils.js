@@ -42,6 +42,7 @@ const utils = {
     exibirDadosFormulario: (dados) => {
         console.log('Dados:', dados);
         alert('Dados salvos com sucesso!\n' + JSON.stringify(dados, null, 2));
+        window.history.back();
     },
 
     // Função para obter usuário do db.cadastros pelo ID

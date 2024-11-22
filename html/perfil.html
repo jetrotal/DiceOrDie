@@ -66,6 +66,7 @@
         const idProcurado = target;
         const usuario = utils.getDataById(idProcurado, db.cadastros);
 
+        podeVoltar = true;
         populateMenus();
         if (usuario) {
             document.getElementById('profileImage').src = usuario['Foto_perfil [image]'];
