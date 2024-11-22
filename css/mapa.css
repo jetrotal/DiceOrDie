@@ -4,6 +4,11 @@ body {
     max-width: 95vw;
 }
 
+.section {
+    max-width: 1080px;
+    margin: auto;
+}
+
 .section-grid {
     justify-items: center;
 }

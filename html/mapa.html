@@ -30,7 +30,7 @@
             </div>
             <div class="form-group">
                 <label for="boardWidth">Largura do Tabuleiro</label>
-                <input type="number" id="boardWidth" value="1040">
+                <input type="number" id="boardWidth" value="800">
             </div>
             <div class="form-group">
                 <label for="boardHeight">Altura do Tabuleiro</label>
@@ -44,31 +44,35 @@
         <br>
         <div>
             <div class="board-container">
-                <canvas id="gameCanvas" width="750" height="600"></canvas>
-                <button id="addPieceButton" class="floating-button">Adicionar Peça</button>
+                <div style="
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+"> <button id="addPieceButton" class="floating-button">Adicionar Peça</button>
+                    <canvas id="gameCanvas" width="800" height="560"></canvas>
+                </div>
             </div>
-        </div>
-        <div id="pieceCustomization" class="modal-section">
-            <h2>Customização da Peça</h2>
-            <div class="form-group">
-                <label for="pieceName">Nome</label>
-                <input type="text" id="pieceName">
+            <div id="pieceCustomization" class="modal-section">
+                <h2>Customização da Peça</h2>
+                <div class="form-group">
+                    <label for="pieceName">Nome</label>
+                    <input type="text" id="pieceName">
+                </div>
+                <div class="form-group">
+                    <label for="pieceColor">Cor</label>
+                    <input type="color" id="pieceColor">
+                </div>
+                <div class="form-group">
+                    <label for="pieceImage">URL da Imagem</label>
+                    <input type="text" id="pieceImage">
+                </div>
+                <div class="button-group">
+                    <button id="updatePieceButton">Atualizar Peça</button>
+                    <button id="removePieceButton">Remover Peça</button>
+                </div>
             </div>
-            <div class="form-group">
-                <label for="pieceColor">Cor</label>
-                <input type="color" id="pieceColor">
-            </div>
-            <div class="form-group">
-                <label for="pieceImage">URL da Imagem</label>
-                <input type="text" id="pieceImage">
-            </div>
-            <div class="button-group">
-                <button id="updatePieceButton">Atualizar Peça</button>
-                <button id="removePieceButton">Remover Peça</button>
-            </div>
-        </div>
 
-        <script src="../js/mapa.js"></script>
+            <script src="../js/mapa.js"></script>
 
 </body>
 
